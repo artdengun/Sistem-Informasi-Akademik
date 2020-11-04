@@ -7,9 +7,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.transaction.Transactional;
+import javax.persistence.*;
+import java.util.Date;
 
 @Data
 @NoArgsConstructor
@@ -18,4 +17,23 @@ import javax.transaction.Transactional;
 @Table(name = "tabel_pendaftaran_siswa_baru")
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id_barang")
 public class Pendaftaran_Siswa_Baru {
+
+    @Id
+    @GeneratedValue
+    @Column(name = "kode_pendaftaran")
+    private String kode_pendaftaran;
+    private String nama_siswa;
+    private String jenis_kelamin;
+    private String tempat_lahir;
+    private Date tanggal_lahir;
+    private String agama;
+    private String kewarga_negaraan;
+    private String anak_ke;
+    private String jumlah_saudara_kandung;
+    private String asal_sekolah;
+    private String alamat;
+    private String nama_ayah;
+    private String pekerjaan_ayah;
+    private String nama_ibu;
+    private String pekerjaan_ibu;
 }

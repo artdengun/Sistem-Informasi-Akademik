@@ -18,7 +18,6 @@ import javax.persistence.Table;
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "kode_kelas")
 public class Data_Absen_Siswa {
 
-    
 
 
 
