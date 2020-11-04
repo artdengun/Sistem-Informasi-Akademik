@@ -9,13 +9,17 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
-import javax.transaction.Transactional;
 
+@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name = "tabel_pendaftaran_siswa_baru")
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id_barang")
-public class Pendaftaran_Siswa_Baru {
+@Table(name = "tabel_Data_Kelas")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "kode_kelas")
+public class Data_Absen_Siswa {
+
+    
+
+
+
 }
