@@ -8,7 +8,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.Date;
 
 @Entity
 @Data
@@ -18,7 +20,11 @@ import javax.persistence.Table;
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "kode_kelas")
 public class Data_Absen_Siswa {
 
-
+    private String NIS;
+    private String nama_siswa;
+    private Date tanggal;
+    private String absen;
+    private String keterangan;
 
 
 }
