@@ -7,9 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -20,6 +18,9 @@ import java.util.List;
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id_nis")
 public class Data_Nilai_Siswa {
 
+    @Id
+    @GeneratedValue
+    @Column(name = "id_nilai_siswa")
 private String nis;
 private String nama_siswa;
 private String semester;
@@ -28,12 +29,5 @@ private String uh2;
 private String uts;
 private String uas;
 
-
-@OneToMany(mappedBy = "Data_Nilai_Siswa")
-    List<Data_Pelajaran> pelajarans;
-
-
-@OneToMany(mappedBy = "Data_Nilai_Siswa")
-    List<Data_Pegawai> pegawais;
 
 }

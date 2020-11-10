@@ -8,9 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.w3c.dom.stylesheets.LinkStyle;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -18,16 +16,15 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "tabel_Data_Kelas")
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "kode_kelas")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id_kelas")
 public class Data_Kelas {
 
- private String kode_kelas;
+    @Id
+    @GeneratedValue
+    @Column(name = "id_kode_kelas")
+    private String kode_kelas;
+    private String kelas;
+    private String daya_tampung;
 
- private String kelas;
-
- private String daya_tampung;
-
- @OneToMany(mappedBy = "Data_Kelas")
-    List<Data_Pegawai> pegawais;
 
 }

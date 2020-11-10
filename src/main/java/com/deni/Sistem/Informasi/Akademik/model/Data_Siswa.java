@@ -1,13 +1,13 @@
 package com.deni.Sistem.Informasi.Akademik.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
@@ -16,9 +16,13 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "tabel_data_siswa")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id_data_siswa")
 public class Data_Siswa {
 
-    private String nis;
+    @Id
+    @GeneratedValue
+    @Column(name = "id_nis_siswa")
+    private String nis_siswa;
     private String nama_siswa;
     private Date tanggal_lahir;
     private String jenis_kelamin;
@@ -27,6 +31,4 @@ public class Data_Siswa {
     private String alamat;
     private String no_telephone;
 
-    @OneToMany(mappedBy = "Data_Siswa")
-    List<Data_Kelas> dataKelasList;
  }

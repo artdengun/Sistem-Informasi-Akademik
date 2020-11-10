@@ -15,12 +15,12 @@ import java.util.Date;
 @AllArgsConstructor
 @Entity
 @Table(name = "tabel_pendaftaran_siswa_baru")
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id_barang")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id_pendaftaran")
 public class Pendaftaran_Siswa_Baru {
 
     @Id
     @GeneratedValue
-    @Column(name = "kode_pendaftaran")
+    @Column(name = "id_kode_pendaftaran")
     private String kode_pendaftaran;
     private String nama_siswa;
     private String jenis_kelamin;
