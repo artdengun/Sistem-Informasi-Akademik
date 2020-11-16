@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
   <meta charset="utf-8">
@@ -48,7 +48,7 @@
       </div>
 
       <!--logo start-->
-      <a href="index.html" class="logo">Dashboard <span class="lite">Akademik</span></a>
+      <a th:href="@{/index}" class="logo">Dashboard <span class="lite">Akademik</span></a>
       <!--logo end-->
 
       <div class="nav search-row" id="top_menu">
@@ -113,7 +113,7 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu">
           <li class="active">
-            <a class="" href="index.html">
+            <a class="" th:href="@{/index.html}">
                           <i class="icon_house_alt"></i>
                           <span>Dashboard</span>
                       </a>

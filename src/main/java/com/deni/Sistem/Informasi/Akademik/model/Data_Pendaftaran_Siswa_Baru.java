@@ -16,7 +16,7 @@ import java.util.Date;
 @Entity
 @Table(name = "tabel_pendaftaran_siswa_baru")
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id_pendaftaran")
-public class Pendaftaran_Siswa_Baru {
+public class Data_Pendaftaran_Siswa_Baru {
 
     @Id
     @GeneratedValue

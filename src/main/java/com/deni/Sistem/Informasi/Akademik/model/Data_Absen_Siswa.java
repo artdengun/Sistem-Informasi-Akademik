@@ -14,7 +14,7 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "tabel_Data_Kelas")
+@Table(name = "tabel_Data_absen_siswa")
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id_absen_siswa")
 public class Data_Absen_Siswa {
 

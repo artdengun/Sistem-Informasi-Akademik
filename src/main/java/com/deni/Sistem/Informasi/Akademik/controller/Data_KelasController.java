@@ -4,8 +4,6 @@ import org.springframework.stereotype.Controller;
 
 
 @Controller
-public class PelajaranController {
-
-
+public class Data_KelasController {
 
 }
