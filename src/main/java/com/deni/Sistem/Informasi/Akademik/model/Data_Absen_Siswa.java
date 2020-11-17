@@ -1,11 +1,9 @@
 package com.deni.Sistem.Informasi.Akademik.model;
 
-
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -14,17 +12,22 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "tabel_Data_absen_siswa")
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id_absen_siswa")
+@Table(name = "Master_Absen_Siswa")
 public class Data_Absen_Siswa {
 
     @Id
-    @GeneratedValue
-    @Column(name = "id_absen_siswa_nis")
+    @GenericGenerator(name = "uuid_Data_Absen_Siswa", strategy = "uuid2")
+    @GeneratedValue(generator = "uuid_Data_Absen_Siswa")
+
+    @Column(name = "nis_siswa", unique = true, length = 50)
     private String NIS;
+    @Column(name = "nama_siswa", length = 50)
     private String nama_siswa;
+    @Column(name = "tanggal")
     private Date tanggal;
+    @Column(name = "absen_siswa", length = 50)
     private String absen;
+    @Column(name = "keterangan", length = 100)
     private String keterangan;
 
 

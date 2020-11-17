@@ -1,29 +1,29 @@
 package com.deni.Sistem.Informasi.Akademik.model;
 
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.w3c.dom.stylesheets.LinkStyle;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "tabel_Data_Kelas")
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id_kelas")
+@Table(name = "Master_Data_Kelas")
 public class Data_Kelas {
 
     @Id
-    @GeneratedValue
-    @Column(name = "id_kode_kelas")
+    @GenericGenerator(name = "uuid_Data_Kelas", strategy = "uuid2")
+    @GeneratedValue(generator = "uuid_Data_Kelas")
+
+    @Column(name = "kode_kelas", length = 4)
     private String kode_kelas;
+    @Column(name = "kelas", length = 3)
     private String kelas;
+    @Column(name = "daya_tampung", length = 8)
     private String daya_tampung;
 
 
