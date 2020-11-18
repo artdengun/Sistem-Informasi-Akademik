@@ -31,4 +31,5 @@ public class Data_Absen_Siswa {
     private String keterangan;
 
 
+
 }

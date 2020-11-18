@@ -8,6 +8,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
@@ -36,5 +37,15 @@ public class Data_Pegawai {
     private String jabatan;
     @Column(name = "status_pegawai", length = 25)
     private String status_pegawai;
+
+    @OneToMany(mappedBy = "Data_Pegawai")
+    List<Data_Pelajaran> pelajarans;
+
+    @OneToMany(mappedBy = "Data_Pegawai")
+    List<Data_Nilai_Siswa> nilaii;
+
+    @OneToMany(mappedBy = "Data_Pegawai")
+    List<Data_Kelas> kelass;
+
 
 }

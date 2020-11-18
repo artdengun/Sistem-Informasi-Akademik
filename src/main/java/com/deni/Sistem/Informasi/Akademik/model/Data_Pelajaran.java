@@ -26,5 +26,11 @@ public class Data_Pelajaran {
     @Column(name = "nama_mapel", length = 25)
     private String nama_mapel;
 
+    @ManyToOne
+    @JoinColumn(name = "nik", insertable = false, updatable = false)
+    private Data_Pegawai pegawai;
+    @Column(name = "nik", length = 6)
+    private String nik;
+
 
 }

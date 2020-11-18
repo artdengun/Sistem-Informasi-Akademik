@@ -34,5 +34,11 @@ public class Data_Nilai_Siswa {
     @Column(name = "uas", length = 2)
     private String uas;
 
+    @ManyToOne
+    @JoinColumn(name = "nik", insertable = false, updatable = false)
+    private Data_Pegawai pegawai;
+    @Column(name = "nik", length = 6)
+    private String nik;
+
 
 }
