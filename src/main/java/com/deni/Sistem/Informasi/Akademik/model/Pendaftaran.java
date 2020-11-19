@@ -17,7 +17,6 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name = "table_pendaftaran")
-@ToString(exclude = "absens,siswas,nilais")
 public class Pendaftaran {
 
     @Id
