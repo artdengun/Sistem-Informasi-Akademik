@@ -7,22 +7,19 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "table_nilai")
-public class Nilai {
+public class Nilai  implements Serializable {
 
     @Id
     @GenericGenerator(name = "uuid_nilai", strategy = "uuid2")
     @GeneratedValue(generator = "uuid_nilai")
 
-    @Column(name = "nis", nullable = false, unique = true, length = 10)
-    private String nis;
-    @Column(name = "nama_siswa", nullable = false, length = 50)
-    private String nama_siswa;
     @Column(name = "semester", nullable = false, length = 2)
     private String semester;
     @Column(name = "uh1", nullable = false, length = 2)
@@ -33,6 +30,17 @@ public class Nilai {
     private String uts;
     @Column(name = "uas",  nullable = false, length = 2)
     private String uas;
+
+    @ManyToOne
+    @JoinColumn(name = "pegawai_id", nullable = false, updatable = false, insertable = false)
+    private Pegawai pegawai;
+
+
+    @ManyToOne
+    @JoinColumn(name = "siswa_id", nullable = false, updatable = false, insertable = false)
+    private Siswa siswa;
+    @Column(name = "nama_siswa", nullable = false, length = 50)
+    private String nama_siswa;
 
 
 

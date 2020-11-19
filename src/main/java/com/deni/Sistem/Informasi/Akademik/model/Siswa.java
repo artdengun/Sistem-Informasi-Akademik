@@ -4,16 +4,19 @@ package com.deni.Sistem.Informasi.Akademik.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "table_siswa")
+@ToString(exclude = "absens,nilais")
 public class Siswa {
 
     @Id
@@ -41,6 +44,12 @@ public class Siswa {
     @JoinColumn(name = "kelas_id", nullable = false)
     private Kelas kelas;
 
+
+    @OneToMany(mappedBy = "siswa")
+    private List<Absen> absens;
+
+    @OneToMany(mappedBy = "siswa")
+    private List<Nilai> nilais;
 
 
  }

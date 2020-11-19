@@ -16,7 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "table_pegawai")
-@ToString(exclude = "nilaii, pelajarans, kelass")
+@ToString(exclude = "nilais, pelajarans, kelass")
 public class Pegawai {
 
     @Id
@@ -39,5 +39,15 @@ public class Pegawai {
     private String jabatan;
     @Column(name = "status_pegawai", nullable = false, length = 25)
     private String status_pegawai;
+
+
+    @OneToMany(mappedBy = "pegawai")
+    private List<Pelajaran> pelajarans;
+
+    @OneToMany(mappedBy = "pegawai")
+    private List<Kelas> kelass;
+
+    @OneToMany(mappedBy = "pegawai")
+    private List<Nilai> nilais;
 
 }

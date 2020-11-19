@@ -28,6 +28,11 @@ public class Kelas {
     @Column(name = "daya_tampung", nullable = false, length = 8)
     private String daya_tampung;
 
+    @ManyToOne
+    @JoinColumn(name = "pegawai_id", insertable = false, updatable = false, nullable = false)
+    private Pegawai pegawai;
+
+
     @OneToMany(mappedBy = "kelas")
     private List<Siswa> siswas;
 

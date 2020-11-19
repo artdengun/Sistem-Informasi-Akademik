@@ -26,5 +26,10 @@ public class Pelajaran {
     @Column(name = "nama_mapel", nullable = false, length = 25)
     private String nama_mapel;
 
+    @ManyToOne
+    @JoinColumn(name = "pegawai_id", nullable = false, insertable = false, updatable = false)
+    private Pegawai pegawai;
+
+
 
 }

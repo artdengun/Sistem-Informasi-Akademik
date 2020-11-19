@@ -1,6 +1,7 @@
 create table table_absen(
-nis_siswa varchar(50) not null unique primary key,
-nama_siswa varchar(50) not null,
+
+siswa_id varchar(10) not null REFERENCES table_kelas(nis_siswa),
+nama_siswa varchar(50) not null REFERENCES table_kelas(nama_siswa),
 tanggal date,
 absen_siswa varchar(50) not null,
 keterangan varchar(100) not null
