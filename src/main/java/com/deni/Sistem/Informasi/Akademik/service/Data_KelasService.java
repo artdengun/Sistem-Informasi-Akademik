@@ -1,6 +1,6 @@
 package com.deni.Sistem.Informasi.Akademik.service;
 
-import com.deni.Sistem.Informasi.Akademik.model.Data_Kelas;
+import com.deni.Sistem.Informasi.Akademik.model.Kelas;
 import com.deni.Sistem.Informasi.Akademik.repository.Data_KelasRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,17 +14,17 @@ public class Data_KelasService {
         @Autowired Data_KelasRepository data_kelasRepository;
 
         // tampilkan list
-    public List<Data_Kelas> getKelas(){
+    public List<Kelas> getKelas(){
         return data_kelasRepository.findAll();
     }
     // simpan data
-    public void save(Data_Kelas data_kelas) {
-        data_kelasRepository.save(data_kelas);
+    public void save(Kelas _kelas) {
+        data_kelasRepository.save(_kelas);
     }
 
     // get dari id
 
-    public Optional<Data_Kelas> findById(String kode_kelas) {
+    public Optional<Kelas> findById(String kode_kelas) {
         return data_kelasRepository.findById(kode_kelas);
     }
 

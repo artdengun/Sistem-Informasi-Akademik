@@ -1,6 +1,6 @@
 package com.deni.Sistem.Informasi.Akademik.controller;
 
-import com.deni.Sistem.Informasi.Akademik.model.Data_Absen_Siswa;
+import com.deni.Sistem.Informasi.Akademik.model.Absen;
 import com.deni.Sistem.Informasi.Akademik.service.Data_AbsenSiswaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,14 +23,14 @@ public class Data_AbsenSiswController {
     }
 
     @PostMapping("absens/addNew")
-    public String addNew(Data_Absen_Siswa data) {
+    public String addNew(Absen data) {
         absenSiswaService.save(data);
         return "redirect:/absens";
     }
 
     @RequestMapping("absens/findById")
     @ResponseBody
-    public Optional<Data_Absen_Siswa> findById(String nis){
+    public Optional<Absen> findById(String nis){
         return findById(nis);
 
     }

@@ -1,6 +1,6 @@
 package com.deni.Sistem.Informasi.Akademik.service;
 
-import com.deni.Sistem.Informasi.Akademik.model.Data_Siswa;
+import com.deni.Sistem.Informasi.Akademik.model.Siswa;
 import com.deni.Sistem.Informasi.Akademik.repository.Data_SiswaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,13 +13,13 @@ public class Data_SiswaService {
     @Autowired
     Data_SiswaRepository data_siswaRepository;
 
-    public List<Data_Siswa> getSiswa(){
+    public List<Siswa> getSiswa(){
         return data_siswaRepository.findAll();
     }
-    public void save(Data_Siswa data_siswa){
-        data_siswaRepository.save(data_siswa);
+    public void save(Siswa _siswa){
+        data_siswaRepository.save(_siswa);
     }
-    public Optional<Data_Siswa> findById(String nis_siswa){
+    public Optional<Siswa> findById(String nis_siswa){
         return data_siswaRepository.findById(nis_siswa);
     }
     public void delete(String nis_siswa){

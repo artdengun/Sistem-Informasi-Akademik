@@ -1,6 +1,6 @@
 package com.deni.Sistem.Informasi.Akademik.controller;
 
-import com.deni.Sistem.Informasi.Akademik.model.Data_Pendaftaran;
+import com.deni.Sistem.Informasi.Akademik.model.Pendaftaran;
 import com.deni.Sistem.Informasi.Akademik.service.Data_PendaftaranSiswaBaruService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,21 +25,21 @@ public class Data_PendaftaranSiswaBaruController {
     }
 
     @PostMapping("pendaftarans/addNew")
-    public String addNew(Data_Pendaftaran data_pendaftaran){
-        data_pendaftaranSiswaBaruService.save(data_pendaftaran);
+    public String addNew(Pendaftaran _pendaftaran){
+        data_pendaftaranSiswaBaruService.save(_pendaftaran);
         return "redirect:/pendaftarans";
     }
 
     @RequestMapping("pendaftarans/findById")
     @ResponseBody
-    public Optional<Data_Pendaftaran> findById(String kode_mapel){
+    public Optional<Pendaftaran> findById(String kode_mapel){
         return data_pendaftaranSiswaBaruService.findById(kode_mapel);
     }
 
     @RequestMapping(value = "pendaftarans/update", method = {RequestMethod.PUT, RequestMethod.GET})
-    public String update(Data_Pendaftaran data_pendaftaran){
+    public String update(Pendaftaran _pendaftaran){
 
-        data_pendaftaranSiswaBaruService.save(data_pendaftaran);
+        data_pendaftaranSiswaBaruService.save(_pendaftaran);
         return "redirect:/pendaftarans";
     }
 

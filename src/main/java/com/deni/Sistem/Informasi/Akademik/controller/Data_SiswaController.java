@@ -1,7 +1,7 @@
 package com.deni.Sistem.Informasi.Akademik.controller;
 
 
-import com.deni.Sistem.Informasi.Akademik.model.Data_Siswa;
+import com.deni.Sistem.Informasi.Akademik.model.Siswa;
 import com.deni.Sistem.Informasi.Akademik.service.Data_SiswaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,19 +24,19 @@ public class Data_SiswaController {
     }
 
     @PostMapping("siswas/addNew")
-    public String addNew(Data_Siswa data_siswa){
-        data_siswaService.save(data_siswa);
+    public String addNew(Siswa _siswa){
+        data_siswaService.save(_siswa);
         return "redirect:/siswas";
     }
     @RequestMapping("siswas/findById")
     @ResponseBody
-    public Optional<Data_Siswa> findById(String nis_siswa){
+    public Optional<Siswa> findById(String nis_siswa){
         return data_siswaService.findById(nis_siswa);
     }
 
     @RequestMapping(value = "siswas/update", method = {RequestMethod.PUT, RequestMethod.GET})
-    public String update(Data_Siswa data_siswa){
-        data_siswaService.save(data_siswa);
+    public String update(Siswa _siswa){
+        data_siswaService.save(_siswa);
         return "redirect:/siswas";
     }
 

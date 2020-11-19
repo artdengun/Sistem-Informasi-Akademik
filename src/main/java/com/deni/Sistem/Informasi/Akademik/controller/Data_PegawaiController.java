@@ -1,6 +1,6 @@
 package com.deni.Sistem.Informasi.Akademik.controller;
 
-import com.deni.Sistem.Informasi.Akademik.model.Data_Pegawai;
+import com.deni.Sistem.Informasi.Akademik.model.Pegawai;
 import com.deni.Sistem.Informasi.Akademik.service.Data_PegawaiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,20 +22,20 @@ public class Data_PegawaiController {
     }
 
     @PostMapping("pegawais/addNew")
-    public String addNew(Data_Pegawai data_pegawai){
-        data_pegawaiService.save(data_pegawai);
+    public String addNew(Pegawai _pegawai){
+        data_pegawaiService.save(_pegawai);
         return "redirect:/pegawais";
     }
 
     @RequestMapping("pegawais/findById")
     @ResponseBody
-    public Optional<Data_Pegawai> findById(String nik) {
+    public Optional<Pegawai> findById(String nik) {
        return data_pegawaiService.findById(nik);
     }
 
     @RequestMapping(value = "pegawais/update", method = {RequestMethod.PUT ,RequestMethod.GET})
-    public String update(Data_Pegawai data_pegawai){
-        data_pegawaiService.save(data_pegawai);
+    public String update(Pegawai _pegawai){
+        data_pegawaiService.save(_pegawai);
         return "redirect:/pegawais";
     }
 

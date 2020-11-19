@@ -1,6 +1,6 @@
 package com.deni.Sistem.Informasi.Akademik.controller;
 
-import com.deni.Sistem.Informasi.Akademik.model.Data_Pelajaran;
+import com.deni.Sistem.Informasi.Akademik.model.Pelajaran;
 import com.deni.Sistem.Informasi.Akademik.service.Data_PelajaranService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,20 +26,20 @@ public class Data_PelajaranController {
     }
 
     @PostMapping("pelajarans/addNew")
-    public String addNew(Data_Pelajaran data_pelajaran) {
-        data_pelajaranService.save(data_pelajaran);
+    public String addNew(Pelajaran _pelajaran) {
+        data_pelajaranService.save(_pelajaran);
         return "redirect:/pelajarans";
     }
 
     @RequestMapping("pelajarans/findById")
     @ResponseBody
-    public Optional<Data_Pelajaran> findById(String kode_mapel) {
+    public Optional<Pelajaran> findById(String kode_mapel) {
         return data_pelajaranService.findById(kode_mapel);
     }
 
     @RequestMapping(value = "pelajarans/update", method = {RequestMethod.PUT, RequestMethod.GET})
-    public String update(Data_Pelajaran data_pelajaran) {
-        data_pelajaranService.save(data_pelajaran);
+    public String update(Pelajaran _pelajaran) {
+        data_pelajaranService.save(_pelajaran);
         return "redirect:/pelajarans";
     }
 

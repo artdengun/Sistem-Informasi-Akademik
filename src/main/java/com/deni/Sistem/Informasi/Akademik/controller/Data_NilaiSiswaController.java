@@ -1,6 +1,6 @@
 package com.deni.Sistem.Informasi.Akademik.controller;
 
-import com.deni.Sistem.Informasi.Akademik.model.Data_Nilai_Siswa;
+import com.deni.Sistem.Informasi.Akademik.model.Nilai;
 import com.deni.Sistem.Informasi.Akademik.service.Data_Nilai_SiswaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,19 +23,19 @@ public class Data_NilaiSiswaController {
 
 
     @PostMapping("nilaii/addNew")
-    public String addNew(Data_Nilai_Siswa data) {
+    public String addNew(Nilai data) {
         data_nilai_siswaService.save(data);
         return "redirect:/nilaii";
     }
 
     @RequestMapping("nilaii/findById")
     @ResponseBody
-    public Optional<Data_Nilai_Siswa> findById(String nis){
+    public Optional<Nilai> findById(String nis){
         return data_nilai_siswaService.findById(nis);
     }
 
     @RequestMapping(value = "nilaii/update", method = {RequestMethod.PUT, RequestMethod.GET})
-    public String update(Data_Nilai_Siswa data){
+    public String update(Nilai data){
         data_nilai_siswaService.save(data);
         return "redirect:/nilaii";
     }
