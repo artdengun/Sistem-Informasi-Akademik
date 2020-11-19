@@ -4,16 +4,20 @@ package com.deni.Sistem.Informasi.Akademik.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
+import org.w3c.dom.stylesheets.LinkStyle;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name = "table_pendaftaran")
+@ToString(exclude = "absens,siswas,nilais")
 public class Pendaftaran {
 
     @Id
@@ -50,4 +54,13 @@ public class Pendaftaran {
     private String nama_ibu;
     @Column(name = "pekerjaan_ibu", nullable = false,  length = 50)
     private String pekerjaan_ibu;
+
+    @OneToMany(mappedBy = "pendaftaran")
+    private List<Absen> absens;
+
+    @OneToMany(mappedBy = "pendaftaran")
+    private List<Siswa> siswas;
+
+    @OneToMany(mappedBy = "pendaftaran")
+    private List<Nilai> nilais;
 }

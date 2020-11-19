@@ -25,8 +25,11 @@ public class Siswa {
 
     @Column(name = "nis_siswa",  nullable = false, unique = true, length = 10)
     private String nis_siswa;
-    @Column(name = "nama_siswa", nullable = false, length = 50)
-    private String nama_siswa;
+
+    @ManyToOne
+    @JoinColumn(name = "pendaftaran_id", nullable = false, insertable = false, updatable = false)
+    private Pendaftaran pendaftaran;
+
     @Column(name = "tanggal_lahir")
     private Date tanggal_lahir;
     @Column(name = "jenis_kelamin", nullable = false, length = 9)

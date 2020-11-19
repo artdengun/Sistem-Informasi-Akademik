@@ -1,6 +1,6 @@
 create table table_siswa(
 nis_siswa varchar(10) not null unique primary key,
-nama_siswa  varchar(50) not null,
+pendaftaran_id varchar(50) not null REFERENCES table_pendaftaran(nama_siswa),
 tanggal_lahir date,
 jenis_kelamin varchar(9) not null,
 tempat_lahir varchar(25) not null,

@@ -32,6 +32,10 @@ public class Nilai  implements Serializable {
     private String uas;
 
     @ManyToOne
+    @JoinColumn(name = "pendaftaran_id", nullable = false, insertable = false, updatable = false)
+    private Pendaftaran pendaftaran;
+
+    @ManyToOne
     @JoinColumn(name = "pegawai_id", nullable = false, updatable = false, insertable = false)
     private Pegawai pegawai;
 
@@ -39,9 +43,6 @@ public class Nilai  implements Serializable {
     @ManyToOne
     @JoinColumn(name = "siswa_id", nullable = false, updatable = false, insertable = false)
     private Siswa siswa;
-    @Column(name = "nama_siswa", nullable = false, length = 50)
-    private String nama_siswa;
-
 
 
 }

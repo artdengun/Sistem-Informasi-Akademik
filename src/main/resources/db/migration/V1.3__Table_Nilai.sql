@@ -1,6 +1,6 @@
 create table table_nilai(
 siswa_id varchar(10) not null REFERENCES table_kelas(nis_siswa),
-nama_siswa varchar(50) not null REFERENCES table_kelas(nama_siswa),
+pendaftaran_id varchar(50) not null REFERENCES table_pendaftaran(nama_siswa),
 semester varchar(2) not null,
 uh1 varchar(2) not null,
 uh2 varchar(2) not null,
